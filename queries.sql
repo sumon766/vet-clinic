@@ -1,5 +1,16 @@
 /*Queries that provide answers to the questions from all projects.*/
 
+/*Day 1 queries*/
+SELECT * FROM animals WHERE name LIKE '%mon%';
+SELECT * FROM animals WHERE date_of_birth BETWEEN '2016-01-01' AND '2019-12-31';
+SELECT name FROM animals WHERE neutered = true AND escapte_attempts < 3;
+SELECT date_of_birth FROM animals WHERE name IN ('Agumon', 'Pikachu');
+SELECT name, escape_attempts FROM animals WHERE weight_kg > 10.5;
+SELECT * FROM animals WHERE neutered = true;
+SELECT * FROM animals WHERE name != 'Gabumon';
+/*Day 1 queries*/
+
+-- Day 2 queries
 BEGIN;
 UPDATE animals SET species = 'unspecified';
 SELECT * FROM animals;
@@ -32,3 +43,4 @@ SELECT neutered, SUM(escape_attempts) AS total_escape_attempts FROM animals GROU
 LIMIT 1;
 SELECT species, MIN(weight_kg) AS min_weight, MAX(weight_kg) AS max_weight FROM animals GROUP BY species;
 SELECT species, AVG(escape_attempts) AS average_escape_attempts FROM animals WHERE date_of_birth BETWEEN '1990-01-01' AND '2000-12-31' GROUP BY species;
+-- Day 2 queries end
