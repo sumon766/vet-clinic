@@ -23,4 +23,7 @@ CREATE TABLE animals (
     weight_kg DECIMAL(10,2),
     species VARCHAR(100)
 );
+
+ALTER TABLE animals DROP COLUMN IF EXISTS species;
+ALTER TABLE animals ADD COLUMN species VARCHAR(100);
 /*Day 2 queries*/

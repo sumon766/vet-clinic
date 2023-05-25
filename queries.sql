@@ -43,4 +43,18 @@ SELECT neutered, SUM(escape_attempts) AS total_escape_attempts FROM animals GROU
 LIMIT 1;
 SELECT species, MIN(weight_kg) AS min_weight, MAX(weight_kg) AS max_weight FROM animals GROUP BY species;
 SELECT species, AVG(escape_attempts) AS average_escape_attempts FROM animals WHERE date_of_birth BETWEEN '1990-01-01' AND '2000-12-31' GROUP BY species;
+
+
+
+
+
+
+
+UPDATE animals SET weight_kg = -11 WHERE id = 1;
+
+BEGIN;
+UPDATE animals SET species = 'unspecified';
+SELECT * FROM animals;
+ROLLBACK;
+SELECT * FROM animals;
 -- Day 2 queries end
