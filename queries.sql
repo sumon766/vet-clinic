@@ -78,3 +78,15 @@ SELECT a.* FROM animals a JOIN owners o ON a.owner_id = o.id JOIN species s ON a
 SELECT a.* FROM animals a JOIN owners o ON a.owner_id = o.id WHERE o.full_name = 'Dean Winchester' AND a.escapte_attempts = 0;
 SELECT o.full_name, COUNT(a.id) AS animal_count FROM owners o LEFT JOIN animals a ON o.id = a.owner_id GROUP BY o.full_name ORDER BY animal_count DESC LIMIT 1;
 /*Queries day 3*/
+
+/*Day 4 queries*/
+SELECT a.name AS animal_name FROM animals a JOIN visits v ON v.animal_id = a.id JOIN vets vt ON vt.id = v.vet_id WHERE vt.name = 'Vet William Tatcher' ORDER BY v.visit_date DESC LIMIT 1;
+SELECT COUNT(DISTINCT v.animal_id) AS total_animals FROM visits v JOIN vets vt ON vt.id = v.vet_id WHERE vt.name = 'Vet Stephanie Mendez';
+SELECT vt.name AS vet_name, s.name AS specialty_name FROM vets vt LEFT JOIN specializations sp ON sp.vet_id = vt.id LEFT JOIN species s ON s.id = sp.species_id;
+SELECT a.name AS animal_name FROM animals a JOIN visits v ON v.animal_id = a.id JOIN vets vt ON vt.id = v.vet_id WHERE vt.name = 'Vet Stephanie Mendez' AND v.visit_date >= '2020-04-01' AND v.visit_date <= '2020-08-30';
+SELECT a.name AS animal_name, COUNT(v.animal_id) AS visit_count FROM animals a JOIN visits v ON v.animal_id = a.id GROUP BY a.name ORDER BY visit_count DESC LIMIT 1;
+SELECT a.name AS animal_name FROM animals a JOIN visits v ON v.animal_id = a.id JOIN vets vt ON vt.id = v.vet_id WHERE vt.name = 'Vet Maisy Smith' ORDER BY v.visit_date ASC LIMIT 1;
+SELECT a.name AS animal_name, vt.name AS vet_name, v.visit_date FROM animals a JOIN visits v ON v.animal_id = a.id JOIN vets vt ON vt.id = v.vet_id ORDER BY v.visit_date DESC LIMIT 1;
+SELECT COUNT(*) AS mismatched_visits FROM visits v JOIN animals a ON a.id = v.animal_id JOIN vets vt ON vt.id = v.vet_id LEFT JOIN specializations sp ON sp.vet_id = vt.id AND sp.species_id = a.species_id WHERE sp.vet_id IS NULL;
+SELECT s.name AS specialty_name FROM specializations sp JOIN vets vt ON vt.id = sp.vet_id JOIN animals a ON a.species_id = sp.species_id WHERE vt.name = 'Vet Maisy Smith' GROUP BY s.name ORDER BY COUNT(*) DESC LIMIT 1;
+/*Day 4 queries*/
