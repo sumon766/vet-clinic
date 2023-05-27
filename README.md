@@ -68,11 +68,9 @@ After you're finished please remove all the comments and instructions!
 
 ### Key Features <a name="key-features"></a>
 
-> Describe between 1-3 key features of the application.
-
-- **[Create database in postgreSQL using CLI]**
-- **[Insert data into table]**
-- **[Query data according to the need]**
+- **Create database in postgreSQL using CLI**
+- **Insert data into table**
+- **Query data according to the need**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -148,11 +146,9 @@ Only postgreSQL installation on your computer is good to start
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-> Describe 1 - 3 features you will add to the project.
-
-- [ ] **[Doctor data]**
-- [ ] **[Other staff and customer's data]**
-- [ ] **[Complete query for all data]**
+- [ ] **Doctor data**
+- [ ] **Other staff and customer's data**
+- [ ] **Complete query for all data**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
